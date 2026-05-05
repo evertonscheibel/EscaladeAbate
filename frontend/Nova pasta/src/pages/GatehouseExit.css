@@ -1,0 +1,163 @@
+.gatehouse-exit {
+    background: #f9fafb;
+    min-height: 100vh;
+}
+
+.exit-header {
+    background: white;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.exit-container {
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* Súmula */
+.sumula-container {
+    background: #111827;
+    color: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.sumula-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.plate-badge {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    background: white;
+    color: #111827;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.ticket-badge {
+    color: #9ca3af;
+    font-family: monospace;
+}
+
+.sumula-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.sumula-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #9ca3af;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.sumula-item span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.permanencia-indicator {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.perm-info strong {
+    display: block;
+    font-size: 24px;
+    color: #fbbf24;
+}
+
+.perm-info span {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Exit Form */
+.exit-form {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.exit-form textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 8px;
+}
+
+.occurrence-section {
+    background: #fff5f5;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #fed7d7;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #c53030;
+    cursor: pointer;
+}
+
+.occurrence-detail {
+    margin-top: 16px;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btn-confirm-exit {
+    width: 100%;
+    background: #111827;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.btn-confirm-exit:hover {
+    background: #1f2937;
+}

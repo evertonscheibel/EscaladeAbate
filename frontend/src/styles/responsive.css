@@ -1,0 +1,699 @@
+/* ==============================================
+   RESPONSIVE.CSS — Global Mobile Responsiveness
+   Breakpoints:
+     - 1200px   (tablets landscape / small laptops)
+     - 1024px   (tablets)
+     - 768px    (tablets portrait / large phones)
+     - 640px    (phones landscape)
+     - 480px    (phones portrait)
+   ============================================== */
+
+/* --- Smooth scroll for automatic scrolling feel --- */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fix iOS auto-zoom on input focus */
+@media (max-width: 768px) {
+
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* =============================================
+   TABLET & SMALL LAPTOPS (≤1200px)
+   ============================================= */
+@media (max-width: 1200px) {
+
+    /* Reduce main content padding */
+    .main-content {
+        padding: 16px;
+    }
+
+    /* Compact grids with fixed columns to 2-column */
+    .tickets-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .closure-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pac-settings-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .deb-new-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =============================================
+   TABLETS (≤1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+
+    /* Stats / metrics grids: max 2 columns */
+    .stats-grid,
+    .metrics-grid,
+    .agent-metrics-grid,
+    .manager-metrics-grid,
+    .stats-row,
+    .kpis-row,
+    .top-metrics {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* Quality dashboard charts */
+    .charts-container,
+    .quality-charts {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* PCP day plan grid */
+    .pcp-day-grid,
+    .pcp-shifts-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Slaughter closure grid */
+    .closure-grid,
+    .closure-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Module selector grid */
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* DeboningScheduleNew */
+    .deb-analise-grid,
+    .deb-analysis-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Slaughter closure list: 7 cols → less */
+    .closure-list-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+/* =============================================
+   MOBILE / TABLETS PORTRAIT (≤768px)
+   ============================================= */
+@media (max-width: 768px) {
+
+    /* --- SIDEBAR: overlay mode on mobile --- */
+    .sidebar {
+        position: fixed;
+        z-index: 1100;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar.open {
+        width: 280px;
+        transform: translateX(0);
+    }
+
+    .sidebar.closed {
+        width: 280px;
+        transform: translateX(-100%);
+    }
+
+    /* Overlay backdrop when sidebar is open on mobile */
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+        backdrop-filter: blur(2px);
+        animation: fadeIn 0.2s ease;
+    }
+
+    .sidebar-overlay.hidden {
+        display: none;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* --- MAIN WRAPPER: no margins on mobile --- */
+    .main-wrapper.sidebar-open,
+    .main-wrapper.sidebar-closed {
+        margin-left: 0 !important;
+    }
+
+    /* --- HEADER: mobile adjustments --- */
+    .app-header {
+        height: 56px;
+        padding: 0 12px;
+    }
+
+    .header-search {
+        display: none !important;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .user-header-info {
+        display: none;
+    }
+
+    .header-user-profile {
+        padding-left: 8px;
+    }
+
+    /* Mobile hamburger button */
+    .mobile-menu-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+        margin-right: 8px;
+        transition: background 0.2s;
+    }
+
+    .mobile-menu-btn:hover {
+        background: var(--surface-2);
+    }
+
+    /* --- MAIN CONTENT: reduced padding --- */
+    .main-content {
+        padding: 12px;
+    }
+
+    /* --- PAGE HEADERS: stack vertically --- */
+    .page-header,
+    .tickets-page-header,
+    .cred-header,
+    .candidates-header,
+    .jobs-header,
+    .external-lots-header,
+    .user-mgmt-header,
+    .perm-profiles-header,
+    .net-header,
+    .gatehouse-header,
+    .deboning-header,
+    .deb-new-header,
+    .closure-header,
+    .pcp-day-header,
+    .quality-header,
+    .area-scanner-header,
+    .checklist-header,
+    .audit-header,
+    .agent-dashboard-header,
+    .nc-header,
+    .pac-header,
+    .permissions-header-actions,
+    .user-detail-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    /* Page header titles: smaller */
+    .page-header h1,
+    .page-header h2 {
+        font-size: 1.25rem !important;
+    }
+
+    /* --- GRIDS: all to single column --- */
+    .stats-grid,
+    .metrics-grid,
+    .agent-metrics-grid,
+    .manager-metrics-grid,
+    .stats-row,
+    .kpis-row,
+    .top-metrics {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+
+    .form-grid,
+    .form-row {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+    }
+
+    /* Module selector single column */
+    .modules-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* PCP day plan single column */
+    .pcp-day-grid,
+    .pcp-shifts-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Profile cards single column */
+    .profiles-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Credentials cards single column */
+    .credentials-grid,
+    .cred-cards-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Candidates cards single column */
+    .candidates-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Non-conformity cards single col */
+    .nc-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Checklist cards single col */
+    .checklist-grid,
+    .models-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Gatehouse dashboard grids */
+    .gatehouse-stats-grid,
+    .gatehouse-metrics {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Dashboard grids */
+    .dashboard-charts-grid,
+    .dashboard-activities-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Slaughter closure list grid */
+    .closure-list-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Slaughter calendar grid */
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr) !important;
+        font-size: 0.7rem;
+    }
+
+    /* DeboningScheduleNew */
+    .deb-analise-grid,
+    .deb-analysis-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Dashboard Alert Banner */
+    .alert-banner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 16px !important;
+        gap: 12px !important;
+    }
+
+    .alert-banner>div:last-child {
+        display: none !important;
+        /* Hide secondary icon on very small screens to save space */
+    }
+
+    /* --- TABLES: horizontal scroll wrapper --- */
+    .tickets-table-container,
+    .user-mgmt-table-container,
+    .perm-table-container,
+    .inventory-table-container,
+    .closure-table-container,
+    .history-table-container,
+    .queue-table-container,
+    .table-container,
+    .models-table-container,
+    .deb-new-table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -12px;
+        padding: 0 12px;
+    }
+
+    /* Ensure tables don't shrink below readable width */
+    .perm-table,
+    table {
+        min-width: 600px;
+    }
+
+    /* --- TABS: horizontal scroll for many tabs --- */
+    .detail-tabs,
+    .tab-navigation,
+    .tabs-container,
+    .manager-tabs,
+    .agent-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap !important;
+        scrollbar-width: none;
+    }
+
+    .detail-tabs::-webkit-scrollbar,
+    .tab-navigation::-webkit-scrollbar,
+    .tabs-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn,
+    .tab-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 0.8rem;
+        padding: 8px 14px !important;
+    }
+
+    /* --- MODALS: fullscreen on mobile --- */
+    .modal-content,
+    .ticket-details-content,
+    .asset-modal-content,
+    .create-asset-content,
+    .cred-modal-content,
+    .candidate-modal-content,
+    .job-modal-content,
+    .ticket-modal-content,
+    .network-device-content,
+    .purchase-modal-content,
+    .standard-modal-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+    }
+
+    .modal-overlay {
+        align-items: stretch !important;
+    }
+
+    /* Modal form grids */
+    .form-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* --- FILTER BARS: wrap and stack --- */
+    .filters-bar,
+    .filter-section,
+    .filter-row,
+    .tickets-filters,
+    .cred-filters,
+    .candidates-filters,
+    .gatehouse-filters {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    .filters-bar select,
+    .filters-bar input,
+    .filter-section select,
+    .filter-section input {
+        min-width: 0 !important;
+        flex: 1 1 calc(50% - 4px) !important;
+    }
+
+    /* --- ACTION BUTTONS: full width --- */
+    .btn-save-section,
+    .btn-primary-action {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* --- UserDetail: Specific --- */
+    .profile-selection-banner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    .access-summary-card {
+        flex-direction: column !important;
+        gap: 12px;
+    }
+
+    /* --- Login page: full width card --- */
+    .login-card,
+    .login-form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 12px !important;
+        padding: 24px !important;
+    }
+
+    /* --- Tickets split layout --- */
+    .tickets-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .tickets-sidebar {
+        display: none;
+    }
+
+    /* --- Footer: smaller --- */
+    .app-footer {
+        padding: 12px;
+        font-size: 0.75rem;
+    }
+}
+
+/* =============================================
+   PHONES LANDSCAPE (≤640px)
+   ============================================= */
+@media (max-width: 640px) {
+
+    /* Even smaller content padding */
+    .main-content {
+        padding: 8px;
+    }
+
+    /* Header further compacted */
+    .app-header {
+        height: 48px;
+        padding: 0 8px;
+    }
+
+    .header-logo-container {
+        width: 60px;
+        height: 36px;
+    }
+
+    /* Table font size reduction */
+    table {
+        font-size: 0.8rem;
+    }
+
+    table th,
+    table td {
+        padding: 6px 8px !important;
+    }
+
+    /* Slaughter calendar cells tighter */
+    .calendar-grid {
+        gap: 2px !important;
+    }
+
+    /* Gatehouse entry form grid */
+    .entry-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Closure list grid even tighter */
+    .closure-list-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Modal form 5-col → single col */
+    .form-grid-5 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Agent/Manager metrics cards: full width */
+    .metric-card,
+    .kpi-card,
+    .stat-card {
+        padding: 12px !important;
+    }
+
+    /* Deboning schedule grid */
+    .deboning-grid-row,
+    .deboning-grid-header {
+        grid-template-columns: 80px 60px 1fr 1fr 1fr 1fr !important;
+        font-size: 0.75rem;
+    }
+
+    /* Filter inputs full width */
+    .filters-bar select,
+    .filters-bar input,
+    .filter-section select,
+    .filter-section input {
+        flex: 1 1 100% !important;
+    }
+
+    /* Network dashboard topology viewer */
+    .topology-viewer {
+        min-height: 300px !important;
+    }
+
+    /* Public forms (ticket/application) */
+    .public-ticket-form,
+    .public-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =============================================
+   PHONES PORTRAIT (≤480px)
+   ============================================= */
+@media (max-width: 480px) {
+
+    .main-content {
+        padding: 6px;
+    }
+
+    /* Very compact header */
+    .app-header {
+        height: 44px;
+    }
+
+    .header-logo-container {
+        width: 48px;
+        height: 32px;
+    }
+
+    .header-icon-btn {
+        padding: 2px;
+    }
+
+    .notification-badge {
+        width: 6px;
+        height: 6px;
+    }
+
+    /* Page titles even smaller */
+    .page-header h1,
+    .page-header h2 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Form elements: larger touch targets */
+    input,
+    select,
+    textarea {
+        min-height: 42px;
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
+    }
+
+    /* Buttons: larger touch targets */
+    button {
+        min-height: 40px;
+    }
+
+    /* Card paddings reduced */
+    .metric-card,
+    .kpi-card,
+    .stat-card,
+    .card {
+        padding: 10px !important;
+    }
+
+    /* Badge font sizes */
+    .badge {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+
+    /* Timeline items */
+    .timeline-item {
+        padding-left: 16px !important;
+    }
+
+    /* Slaughter calendar: very compact */
+    .calendar-grid {
+        font-size: 0.6rem;
+    }
+}
+
+/* =============================================
+   UTILITY: Hide the hamburger button on desktop
+   ============================================= */
+.mobile-menu-btn {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+}
+
+/* =============================================
+   UTILITY: Smooth touch scrolling everywhere
+   ============================================= */
+.main-content,
+.sidebar-nav,
+.modal-content,
+.tab-content,
+.perm-table-container,
+.tickets-table-container,
+.inventory-table-container,
+.closure-table-container,
+.table-container,
+.stat-card,
+.kanban-column,
+table {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent horizontal overflow on the body */
+body {
+    overflow-x: hidden;
+}
+
+.app-layout {
+    overflow-x: hidden;
+}
+
+/* =============================================
+   UTILITY: Touch-friendly interactions
+   ============================================= */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Remove hover effects that don't work well on touch */
+    .nav-item:hover {
+        transform: none;
+    }
+
+    /* Larger clickable areas */
+    .nav-item {
+        padding: 12px 14px;
+    }
+
+    /* Checkboxes and inputs larger */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+}

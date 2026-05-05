@@ -1,0 +1,100 @@
+/* Boletos Financial Premium Styles */
+.boletos-page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Row danger for overdue items */
+.row-danger td {
+    background-color: rgba(239, 68, 68, 0.05) !important;
+}
+
+.row-danger:hover td {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Overdue Badge */
+.overdue-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: var(--error-soft);
+    color: var(--error);
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--error);
+}
+
+/* Value Styling */
+.currency-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.currency-value.success {
+    color: var(--success);
+}
+
+.currency-value.danger {
+    color: var(--error);
+}
+
+/* Table Specifics */
+.table-container {
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    margin-top: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--bg-soft);
+    padding: 16px;
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--border);
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--text);
+    vertical-align: middle;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .boletos-page-container {
+        padding: 16px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}

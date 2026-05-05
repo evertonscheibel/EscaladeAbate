@@ -1,0 +1,53 @@
+.perm-profiles-container {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Page Header e Grid agora usam padrões globais de layout em PermissionProfiles.tsx */
+
+.profile-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.profile-title-area h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.profile-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Modal e Matriz de Permissões */
+/* Os estilos agora são dominados por .modal-container, .form-control e .premium-table */
+
+.color-swatch {
+    transition: all 0.2s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.15);
+}
+
+.color-swatch.active {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--primary);
+}
+
+.perm-module-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Responsividade ajustada via inline styles e grid auto-fill */

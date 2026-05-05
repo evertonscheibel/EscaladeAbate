@@ -1,0 +1,327 @@
+.user-detail-container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.user-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.user-header-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-header-info h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    background: var(--background);
+}
+
+/* Tabs */
+.detail-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding: 0 4px;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+    background: #edf2f7;
+}
+
+.tab-btn.active {
+    background: #FFFFFF;
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+}
+
+/* Content Area */
+.tab-content {
+    background: var(--card-bg);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-top: none;
+}
+
+/* Forms */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background: #fbfcfe;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.08);
+}
+
+.btn-save-section {
+    margin-top: 32px;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(67, 24, 255, 0.2);
+    transition: all 0.2s;
+}
+
+.btn-save-section:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(118, 75, 162, 0.3);
+}
+
+.btn-save-section:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Profile Selector in Permissions Tab */
+.profile-selection-banner {
+    background: var(--background);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.banner-info {
+    flex: 1;
+}
+
+/* Permissions Grid */
+.permissions-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.perm-table-container {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.perm-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.perm-table th {
+    background: var(--background);
+    padding: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.perm-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+}
+
+.perm-module-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.perm-cell {
+    text-align: center;
+    position: relative;
+    padding: 4px !important;
+}
+
+.perm-cell input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.perm-cell.from-profile {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.perm-cell.customized {
+    background: rgba(255, 152, 0, 0.05);
+}
+
+.not-applicable {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.perm-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+/* Audit Log */
+.audit-timeline {
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 32px;
+    padding-bottom: 24px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
+    z-index: 1;
+}
+
+.timeline-meta {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.timeline-content {
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+}
+
+.timeline-content strong {
+    color: var(--text-primary);
+}
+
+/* Access Cards */
+.access-summary-card {
+    background: var(--background);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset-password-modal {
+    text-align: center;
+}
+
+.temp-password-box {
+    background: #f1f5f9;
+    padding: 16px;
+    border: 2px dashed var(--primary);
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    color: var(--primary);
+    margin: 20px 0;
+}

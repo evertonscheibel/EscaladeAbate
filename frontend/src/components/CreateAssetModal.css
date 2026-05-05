@@ -1,0 +1,128 @@
+.create-asset-modal {
+    max-width: 700px;
+}
+
+.create-asset-modal .modal-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.create-asset-modal .info-box {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.create-asset-modal .info-box strong {
+    color: #0369a1;
+    margin-right: 0.5rem;
+}
+
+.create-asset-modal .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.create-asset-modal .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-asset-modal .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.create-asset-modal .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #334155;
+    font-size: 0.875rem;
+}
+
+.create-asset-modal .form-group input,
+.create-asset-modal .form-group select,
+.create-asset-modal .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    background-color: #fff;
+}
+
+.create-asset-modal .form-group input:focus,
+.create-asset-modal .form-group select:focus,
+.create-asset-modal .form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.create-asset-modal .form-group textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+.create-asset-modal .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.create-asset-modal .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.create-asset-modal .btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+.create-asset-modal .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+.create-asset-modal .btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(59, 130, 246, 0.4);
+}
+
+.create-asset-modal .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .create-asset-modal {
+        max-width: 95vw;
+        margin: 1rem;
+    }
+
+    .create-asset-modal .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,616 @@
+/* Layout de altura total */
+.slaughter-schedule {
+    display: flex;
+    flex-direction: column;
+    background: #f5f7fa;
+}
+
+.schedule-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 24px;
+    /* Restaurado para o tamanho original padrão */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.schedule-content {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.totals-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.totals-grid {
+    display: flex;
+    /* Flex instead of grid for single row */
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.total-item {
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.lots-section {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.lots-header {
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    min-height: auto;
+}
+
+.lots-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #333;
+}
+
+/* Tabela com scroll */
+.lots-table {
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+}
+
+.lots-table table {
+    width: 100%;
+    border-collapse: collapse;
+    height: auto;
+}
+
+/* Sticky column headers while scrolling */
+.lots-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.lots-table thead th {
+    background: #f8f9fa;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+
+.header-bottom {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-info-inputs {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-item label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-time-input,
+.header-rate-input {
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    width: 120px;
+    height: 44px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.header-time-input:focus,
+.header-rate-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.intervals-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.interval-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.interval-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: white;
+    padding: 0 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+}
+
+.interval-inputs input {
+    border: none;
+    background: transparent;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.interval-inputs input:focus {
+    outline: none;
+}
+
+.header-time-input-small {
+    width: 75px;
+    text-align: center;
+}
+
+.header-duration-input {
+    width: 45px;
+    text-align: center;
+    border-left: 1px solid #eee !important;
+}
+
+.unit-label {
+    font-size: 11px;
+    color: #666;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.time-col,
+.duration-col {
+    font-family: 'Courier New', monospace;
+    color: #444;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.actions-col {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-icon {
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.btn-icon:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.btn-icon.danger:hover {
+    background: #f44336;
+    border-color: #f44336;
+}
+
+
+
+.totals-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.totals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+}
+
+.total-item.grand-total {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-left: none;
+    font-size: 14px;
+}
+
+.total-label {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.total-value {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    font-size: 20px;
+    color: #999;
+}
+
+.error {
+    color: #f44336;
+}
+
+/* Inline Editing Table Styles */
+.inline-edit-table {
+    min-width: 1000px;
+}
+
+.new-lot-row {
+    background: #f8fafc !important;
+    border-bottom: 3px solid #667eea !important;
+    position: sticky;
+    top: 45px;
+    z-index: 1;
+}
+
+.new-lot-row td {
+    padding: 8px 12px !important;
+    vertical-align: middle;
+}
+
+.inline-input,
+.inline-input-small,
+.inline-input-num {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    background: white;
+    box-sizing: border-box;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.inline-input-small {
+    width: 90px;
+    text-align: center;
+}
+
+.inline-input-num {
+    width: 110px;
+    text-align: center;
+}
+
+.inline-input:focus,
+.inline-input-small:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.info-col {
+    font-size: 16px;
+    color: #64748b;
+    font-style: italic;
+    text-align: center;
+}
+
+.btn-add-inline {
+    background: #667eea;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+}
+
+.btn-add-inline:hover {
+    background: #5a67d8;
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+}
+
+.total-col-header {
+    width: 60px;
+}
+
+.total-col {
+    background: #f1f5f9;
+    text-align: center !important;
+}
+
+.qty-col,
+.num-col {
+    width: 100px;
+    text-align: center !important;
+}
+
+.num-col {
+    width: 120px;
+}
+
+.total-col {
+    background: #f1f5f9;
+    text-align: center !important;
+    font-weight: 800;
+}
+
+/* Fix for Rancher Autocomplete inside table */
+.new-lot-row .rancher-autocomplete {
+    position: relative;
+    width: 100%;
+}
+
+.new-lot-row .autocomplete-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+/* Fix for Rancher Field Overlay - Force reset of all potential conflicting styles */
+.rancher-field-group {
+    position: static !important;
+    z-index: auto !important;
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+}
+
+.rancher-field-group label {
+    position: static !important;
+    z-index: auto !important;
+    background: transparent !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+    color: #111 !important;
+}
+
+.rancher-field-group .rancher-autocomplete {
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+}
+
+.rancher-field-group .autocomplete-input-wrapper {
+    position: relative !important;
+    background: transparent !important;
+}
+
+/* ============================================
+   Header Layout
+   ============================================ */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    flex-shrink: 0;
+}
+
+.header-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.header-title h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.status-badge.draft {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.status-badge.closed {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================
+   Header Action Buttons
+   ============================================ */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(-2px);
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: white;
+    color: #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+    background: #f0f0ff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(251, 191, 36, 0.2);
+    border: 1px solid rgba(251, 191, 36, 0.5);
+    color: #fde68a;
+    backdrop-filter: blur(4px);
+}
+
+.btn-warning:hover {
+    background: rgba(251, 191, 36, 0.35);
+    border-color: rgba(251, 191, 36, 0.7);
+    color: white;
+    transform: translateY(-1px);
+}

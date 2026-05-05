@@ -1,0 +1,592 @@
+/* Switch Ports Panel Styles */
+
+.switch-panel-modal {
+    background: white;
+    border-radius: 16px;
+    width: 95%;
+    max-width: 1200px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Header */
+.switch-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.switch-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch-panel-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.device-meta {
+    margin: 4px 0 0 0;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.device-meta .ip {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.device-meta .separator {
+    opacity: 0.5;
+}
+
+/* Body */
+.switch-panel-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Visual Panel */
+.visual-panel {
+    flex: 1;
+    padding: 24px;
+    background: #f8fafc;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #1e293b;
+}
+
+.port-stats {
+    display: flex;
+    gap: 16px;
+}
+
+.stat {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.stat-value.poe {
+    color: #f59e0b;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Switch Faceplate */
+.switch-faceplate {
+    background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 16px;
+    border: 2px solid #94a3b8;
+}
+
+.switch-leds {
+    width: 40px;
+    background: #334155;
+    border-radius: 4px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.switch-leds .led {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #475569;
+}
+
+.switch-leds .led.power.on {
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.switch-leds .led.status.on {
+    background: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+    animation: blink 2s infinite;
+}
+
+.switch-leds .led.fault.on {
+    background: #ef4444;
+    box-shadow: 0 0 8px #ef4444;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Ports Container */
+.ports-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px;
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+.port-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Individual Port */
+.port {
+    width: 44px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    border: 2px solid #cbd5e1;
+}
+
+.port:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.port.selected {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.port.up {
+    background: #dcfce7;
+    border-color: #22c55e;
+}
+
+.port.disabled {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    opacity: 0.6;
+}
+
+/* Port LEDs */
+.port-leds {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.port-leds .led {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+.port-leds .led.link.on {
+    background: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+}
+
+.port-leds .led.poe.on {
+    background: #f59e0b;
+    box-shadow: 0 0 6px #f59e0b;
+}
+
+/* Port Connector Visual */
+.port-connector {
+    background: #1e293b;
+    border-radius: 2px;
+    padding: 6px 4px;
+    margin: 0 2px;
+}
+
+.port-pins {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px;
+}
+
+.pin {
+    width: 3px;
+    height: 8px;
+    background: linear-gradient(180deg, #d4a017 0%, #b8860b 100%);
+    border-radius: 1px;
+}
+
+.port-number {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #475569;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.port-device-indicator {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Port Legend */
+.port-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.legend-item .led {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+.legend-item .led.link.on {
+    background: #22c55e;
+}
+
+.legend-item .led.poe.on {
+    background: #f59e0b;
+}
+
+/* Config Panel */
+.config-panel {
+    width: 350px;
+    background: white;
+    border-left: 1px solid #e2e8f0;
+    overflow-y: auto;
+}
+
+.port-config {
+    padding: 24px;
+}
+
+.config-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.config-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #1e293b;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.up {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.down {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.status-badge.disabled {
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+.config-section {
+    margin-bottom: 24px;
+}
+
+.config-section h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px 0;
+}
+
+.config-section .form-group {
+    margin-bottom: 16px;
+}
+
+.config-section .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.config-section .form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.config-section .form-group input,
+.config-section .form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.config-section .form-group input:focus,
+.config-section .form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.config-section .form-group.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.config-section .form-group.checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.config-actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.config-actions .btn-secondary,
+.config-actions .btn-primary {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.config-actions .btn-secondary {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+}
+
+.config-actions .btn-secondary:hover {
+    background: #f8fafc;
+}
+
+.config-actions .btn-primary {
+    background: #3b82f6;
+    border: none;
+    color: white;
+}
+
+.config-actions .btn-primary:hover {
+    background: #2563eb;
+}
+
+/* No Port Selected State */
+.no-port-selected {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.no-port-selected .empty-icon {
+    width: 80px;
+    height: 80px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.no-port-selected h3 {
+    margin: 0 0 8px 0;
+    color: #64748b;
+    font-size: 1.125rem;
+}
+
+.no-port-selected p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+.switch-panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.switch-panel-footer .btn-secondary {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.switch-panel-footer .btn-secondary:hover {
+    background: #f1f5f9;
+}
+
+.switch-panel-footer .btn-primary {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.switch-panel-footer .btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.switch-panel-footer .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .switch-panel-body {
+        flex-direction: column;
+    }
+    
+    .config-panel {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .ports-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .switch-panel-modal {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+    
+    .header-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .device-meta {
+        flex-wrap: wrap;
+    }
+}

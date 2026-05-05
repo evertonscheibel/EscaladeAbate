@@ -1,0 +1,154 @@
+/* Gatehouse History Premium Styles */
+.gatehouse-history-page {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Advanced Filter Bar Overrides */
+.filter-bar.advanced {
+    padding: 32px;
+    margin-bottom: 32px;
+    background: var(--bg-soft);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.filter-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.date-range-shorthand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-range-shorthand .form-control {
+    flex: 1;
+}
+
+.range-sep {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+/* History Specific Cells */
+.ticket-id {
+    font-family: var(--font-mono);
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 0.85rem;
+    background: var(--primary-soft);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.datetime-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.datetime-cell .date {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.datetime-cell .time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.datetime-cell .location,
+.datetime-cell .duration {
+    font-size: 0.7rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.in-progress-marker {
+    display: inline-flex;
+    padding: 4px 10px;
+    background: var(--warning-soft);
+    color: var(--warning);
+    font-size: 10px;
+    font-weight: 800;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.status-cell-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.access-type-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+/* Pagination & Empty */
+.table-pagination-info {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.empty-state-cell {
+    padding: 80px 20px !important;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .filter-grid-premium {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-grid-premium {
+        grid-template-columns: 1fr;
+    }
+
+    .date-range-shorthand {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .range-sep {
+        text-align: center;
+    }
+}

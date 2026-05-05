@@ -1,0 +1,534 @@
+/* src/pages/DeboningScheduleNew.css */
+
+.deb-new-page {
+    padding: 24px;
+    background-color: var(--bg);
+    min-height: 100vh;
+}
+
+.deb-new-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Cards */
+.deb-new-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    border: 1px solid var(--border);
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.deb-new-card:hover {
+    box-shadow: var(--shadow-2);
+}
+
+/* Header Section */
+.deb-new-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    background: var(--surface);
+    padding: 16px 24px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-1);
+    border: 1px solid var(--border);
+}
+
+.deb-new-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.deb-new-header-title h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.deb-new-header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Tabs */
+.deb-new-tabs {
+    display: flex;
+    gap: 8px;
+    background: var(--surface-2);
+    padding: 6px;
+    border-radius: var(--radius-md);
+    width: fit-content;
+    margin-bottom: 24px;
+}
+
+.deb-new-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.deb-new-tab.active {
+    background: var(--surface);
+    color: var(--primary);
+    box-shadow: var(--shadow-1);
+}
+
+/* Main Tabs Programação vs Analise */
+.deb-new-main-tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 2px;
+}
+
+.deb-new-main-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.deb-new-main-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.deb-new-main-tab.active {
+    color: var(--primary);
+}
+
+.deb-new-main-tab.active::after {
+    width: 100%;
+}
+
+.deb-new-main-tab:hover {
+    color: var(--primary);
+    background: var(--sidebar-hover);
+}
+
+/* Form inline */
+.deb-new-form-inline {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr auto;
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 24px;
+}
+
+.deb-new-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.deb-new-form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.deb-new-form-group input,
+.deb-new-form-group select,
+.deb-new-form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.938rem;
+    background: var(--surface);
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.deb-new-form-group input:focus,
+.deb-new-form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Buttons */
+.deb-new-btn-primary {
+    background: var(--brand-950);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(11, 20, 55, 0.2);
+}
+
+.deb-new-btn-primary:hover {
+    background: var(--brand-700);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 20, 55, 0.3);
+}
+
+.deb-new-btn-primary:active {
+    transform: translateY(0);
+}
+
+.deb-new-btn-add {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--brand-glow);
+    color: var(--brand-950);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(77, 209, 255, 0.2);
+}
+
+.deb-new-btn-add:hover {
+    transform: scale(1.05);
+    background: #70dbff;
+}
+
+/* Tabela */
+.deb-new-table-container {
+    margin-top: 24px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.deb-new-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.deb-new-table thead {
+    background: var(--table-header-bg);
+}
+
+.deb-new-table th {
+    padding: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+}
+
+.deb-new-table td {
+    padding: 14px 16px;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.deb-new-table tr:hover td {
+    background: var(--table-row-hover);
+}
+
+/* KPI no resumo */
+.deb-new-kpi-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* Analise Section Extras */
+.deb-analise-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.deb-analise-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.deb-analise-card {
+    background: var(--surface);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    border: 1px solid var(--border);
+}
+
+.deb-analise-card label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.deb-analise-card .value {
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.deb-analise-card.primary .value {
+    color: var(--primary);
+}
+
+.deb-analise-card.success .value {
+    color: var(--success);
+}
+
+.deb-analise-card.warning .value {
+    color: var(--warning);
+}
+
+.deb-analise-card.info .value {
+    color: var(--info);
+}
+
+.deb-analise-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.deb-analise-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.deb-analise-table th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.deb-analise-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+}
+
+.deb-new-kpi {
+    padding: 20px;
+    background: var(--surface-2);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.deb-new-kpi-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.deb-new-kpi-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.deb-new-kpi-unit {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-left: 6px;
+    font-weight: 600;
+}
+
+/* Badges */
+.deb-new-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.deb-new-badge.mercado-interno {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.deb-new-badge.exportacao {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--info);
+}
+
+.deb-new-badge.industrializacao {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.deb-new-badge.pendente {
+    background: var(--surface-2);
+    color: var(--text-muted);
+}
+
+.deb-new-badge.em-processo {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.deb-new-badge.concluido {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+/* Buttons Icon */
+.deb-new-btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.deb-new-btn-icon:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.deb-new-btn-icon.danger:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+/* Charts */
+.deb-new-charts {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.deb-new-chart-card {
+    background: var(--surface);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-1);
+}
+
+.deb-new-chart-title {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Modal Piece Management */
+.deb-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 20, 55, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.deb-modal {
+    background: var(--surface);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+}
+
+.deb-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+}
+
+.deb-close {
+    background: var(--surface-2);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.deb-close:hover {
+    background: var(--danger);
+    color: white;
+}

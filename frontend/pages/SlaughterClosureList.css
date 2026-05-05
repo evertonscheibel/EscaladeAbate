@@ -1,0 +1,180 @@
+.pcp-calendar-container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pcp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    color: var(--primary-color);
+    width: 32px;
+    height: 32px;
+}
+
+.header-title h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.current-month {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    min-width: 150px;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+.weekday-label {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.calendar-day {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-height: 100px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.calendar-day:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.off-month {
+    background: #f8f9fa;
+    opacity: 0.5;
+}
+
+.day-number {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.day-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.indicator {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.indicator.abate .dot {
+    background: var(--primary-color);
+}
+
+.status-badge-small {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    font-weight: 700;
+}
+
+.status-badge-small.closed {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge-small.pending {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.no-data-hint {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: auto;
+}
+
+.pcp-summary-footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-dot.closed {
+    background: #2e7d32;
+}
+
+.status-dot.in_progress {
+    background: #e65100;
+}
+
+.quick-access p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}

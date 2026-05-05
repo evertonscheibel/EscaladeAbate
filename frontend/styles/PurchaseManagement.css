@@ -1,0 +1,137 @@
+/* ==========================
+   Purchase Requests (Premium)
+   - Scoped to avoid global CSS collisions
+   - Uses design tokens from App.css
+   ========================== */
+
+.purchase-requests-container {
+    padding: 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+    min-height: calc(100vh - 70px);
+}
+
+.purchase-requests-container .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.purchase-requests-container .page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.purchase-requests-container .page-header p {
+    margin: 6px 0 0;
+    color: var(--text-muted);
+}
+
+.purchase-requests-container .filters-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    padding: 18px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 18px;
+}
+
+.purchase-requests-container .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 220px;
+}
+
+.purchase-requests-container .filter-group label {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.purchase-requests-container .filter-group select,
+.purchase-requests-container .filter-group input {
+    width: 100%;
+}
+
+.purchase-requests-container .action-buttons-group {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.purchase-requests-container .action-buttons-group .btn {
+    padding: 8px 10px;
+}
+
+.purchase-requests-container .loading {
+    padding: 24px;
+    color: var(--text-muted);
+}
+
+.purchase-requests-container .empty-state {
+    margin-top: 18px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-1);
+}
+
+.purchase-requests-container .empty-state svg {
+    opacity: 0.7;
+}
+
+/* Improve table density for purchase module */
+.purchase-requests-container .data-table th {
+    padding: 12px 14px;
+}
+
+.purchase-requests-container .data-table td {
+    padding: 12px 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .purchase-requests-container {
+        padding: 16px;
+    }
+
+    .purchase-requests-container .page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .purchase-requests-container .filters-section {
+        padding: 14px;
+    }
+
+    .purchase-requests-container .filter-group {
+        min-width: 100%;
+    }
+
+    .purchase-requests-container .table-container {
+        overflow-x: auto;
+    }
+
+    .purchase-requests-container .data-table {
+        min-width: 980px;
+    }
+}

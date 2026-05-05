@@ -1,0 +1,136 @@
+.external-lots-container {
+    padding: 24px;
+    background-color: var(--bg);
+    min-height: 100vh;
+}
+
+.external-lots-container .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    color: var(--primary-color);
+}
+
+.title-section h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text);
+}
+
+.filters-bar {
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-box svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+    outline: none;
+}
+
+.lots-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.lots-table th {
+    padding: 16px;
+    text-align: left;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.lots-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.market-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.market-badge.mi {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.market-badge.exp {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--info);
+}
+
+.market-badge.mi_exp {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+}
+
+.market-badge.ind {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.btn-icon {
+    padding: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 6px;
+}
+
+.btn-icon:hover {
+    background: #f1f5f9;
+}
+
+.btn-icon.delete:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}

@@ -1,0 +1,134 @@
+.models-page {
+    padding: 24px;
+}
+
+.models-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.models-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.models-table-container {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px var(--box-shadow);
+}
+
+.models-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.models-table th {
+    background: #f8fafc;
+    padding: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.models-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.font-mono {
+    font-family: 'Monaco', monospace;
+    font-size: 0.85rem !important;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.prog-badge {
+    background: #eef2ff;
+    color: #6366f1;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-pill.ativo {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.status-pill.inativo {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.status-pill.em.revisão {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.row-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+    background: #f5f7ff;
+}
+
+.btn-icon.primary {
+    background: #6366f1;
+    color: white;
+    border-color: #6366f1;
+}
+
+.btn-icon.primary:hover {
+    background: #4f46e5;
+    border-color: #4f46e5;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-icon.delete:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.no-data-table {
+    padding: 60px;
+    text-align: center;
+    color: var(--text-secondary);
+}

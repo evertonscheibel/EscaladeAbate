@@ -1,0 +1,20 @@
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/AssetTimelineModal.tsx(104,66): error TS6133: 'index' is declared but its value is never read.
+src/components/TicketModal.tsx(145,77): error TS2322: Type 'string' is not assignable to type '"media" | "baixa" | "alta" | "critica"'.
+src/components/TicketModal.tsx(160,85): error TS2322: Type 'string' is not assignable to type '"aberto" | "em_andamento" | "resolvido" | "fechado"'.
+src/pages/Assets.tsx(3,71): error TS6133: 'FileSpreadsheet' is declared but its value is never read.
+src/pages/Boletos.tsx(3,16): error TS6133: 'DollarSign' is declared but its value is never read.
+src/pages/Certificates.tsx(3,16): error TS6133: 'Search' is declared but its value is never read.
+src/pages/DashboardNew.tsx(5,20): error TS6133: 'LineChart' is declared but its value is never read.
+src/pages/DashboardNew.tsx(5,31): error TS6133: 'Line' is declared but its value is never read.
+src/pages/DashboardNew.tsx(6,43): error TS6133: 'Legend' is declared but its value is never read.
+src/pages/DashboardNew.tsx(172,56): error TS6133: 'entry' is declared but its value is never read.
+src/pages/DashboardNew.tsx(208,55): error TS6133: 'entry' is declared but its value is never read.
+src/pages/Notifications.tsx(3,23): error TS6133: 'Trash2' is declared but its value is never read.
+src/pages/Problems.tsx(3,56): error TS6133: 'TrendingUp' is declared but its value is never read.
+src/pages/PublicTicketForm.tsx(8,11): error TS6133: 'navigate' is declared but its value is never read.
+src/pages/Tickets.tsx(7,5): error TS6133: 'Filter' is declared but its value is never read.
+src/pages/Tickets.tsx(8,5): error TS6133: 'Download' is declared but its value is never read.
+src/pages/Tickets.tsx(14,5): error TS6133: 'X' is declared but its value is never read.
+src/pages/Users.tsx(4,38): error TS6133: 'Shield' is declared but its value is never read.
+src/pages/Users.tsx(105,51): error TS6133: 'active' is declared but its value is never read.

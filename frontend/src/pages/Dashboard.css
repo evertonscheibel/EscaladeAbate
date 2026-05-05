@@ -1,0 +1,254 @@
+.dashboard {
+    min-height: 100vh;
+    background: var(--bg);
+    /* Token */
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-header {
+    background: var(--surface);
+    /* Token - Mudança para surface no header novo design ou manter brand? Vamos usar surface */
+    color: var(--text);
+    /* Token */
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    /* Token */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.role-badge {
+    background: var(--chip-bg);
+    /* Token */
+    color: var(--chip-text);
+    /* Token */
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--chip-border);
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.dashboard-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.kpi-card {
+    background: var(--surface);
+    /* Token */
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-1);
+    /* Token */
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+    border: 1px solid var(--border);
+    /* Token */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2);
+    /* Token */
+    border-color: var(--primary);
+}
+
+.kpi-card.alert {
+    border-left: 4px solid var(--danger);
+    /* Token */
+}
+
+.kpi-icon {
+    font-size: 48px;
+    line-height: 1;
+    color: var(--primary);
+    /* Token */
+}
+
+.kpi-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    /* Token */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kpi-value {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    /* Token */
+}
+
+.status-section,
+.priority-section,
+.info-section {
+    background: var(--surface);
+    /* Token */
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-1);
+    /* Token */
+    border: 1px solid var(--border);
+    /* Token */
+}
+
+.status-section h2,
+.priority-section h2,
+.info-section h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: var(--text);
+    /* Token */
+}
+
+.status-grid,
+.priority-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.status-item,
+.priority-item {
+    background: var(--bg);
+    /* Token */
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary);
+    /* Token default */
+    border: 1px solid var(--border);
+    border-left-width: 4px;
+}
+
+.priority-item.priority-baixa {
+    border-left-color: var(--success);
+}
+
+.priority-item.priority-media {
+    border-left-color: var(--warning);
+}
+
+.priority-item.priority-alta {
+    border-left-color: var(--danger);
+}
+
+.priority-item.priority-critica {
+    border-left-color: #9c27b0;
+    /* Manter roxo específico ou usar var(--text-primary)? */
+    background: rgba(156, 39, 176, 0.1);
+}
+
+.status-label,
+.priority-label {
+    font-weight: 600;
+    color: var(--text);
+    /* Token */
+    text-transform: capitalize;
+}
+
+.status-count,
+.priority-count {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    /* Token */
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.info-section li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--text-muted);
+    /* Token */
+    border-bottom: 1px solid var(--border);
+}
+
+.info-section p {
+    color: var(--text-muted);
+    /* Token */
+    line-height: 1.6;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    color: var(--primary);
+    /* Token */
+}

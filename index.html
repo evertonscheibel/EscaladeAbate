@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Curral – Bem-Estar Animal</title>
+    <style>
+        :root {
+            --bg-color: #e0e0e0;
+            --text-color: #333;
+            --accent-color: #4CAF50;
+            --danger-color: #f44336;
+            --panel-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+            /* Evita scrollbars durante o jogo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #game-container {
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: #8D6E63;
+            /* Cor de terra/curral */
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* HUD */
+        #hud {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+            pointer-events: none;
+            /* Permite clicar no jogo através do HUD */
+            z-index: 10;
+        }
+
+        .hud-item span {
+            color: #FFD54F;
+        }
+
+        /* Telas (Start, Game Over, Help) */
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .screen.hidden {
+            display: none;
+        }
+
+        h1 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #FFD54F;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #f0f0f0;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #43a047;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: var(--panel-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: left;
+        }
+
+        .stat-label {
+            font-weight: bold;
+        }
+
+        .stat-value {
+            text-align: right;
+            font-family: monospace;
+            font-size: 1.2em;
+        }
+
+        .fault-highlight {
+            color: var(--danger-color);
+        }
+
+        #help-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid white;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 15;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #help-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-item">Tempo: <span id="timer-display">0</span>s</div>
+            <div class="hud-item">Faltas: <span id="faults-display" style="color: #ff5252;">0</span></div>
+            <div class="hud-item">Tempo Final: <span id="final-score-display">--</span></div>
+        </div>
+
+
+        showHelp() {
+        document.getElementById('help-screen').classList.remove('hidden');
+        if (this.state === 'PLAYING') {
+        this.state = 'PAUSED';
+        }
+        },
+
+        hideHelp() {
+        document.getElementById('help-screen').classList.add('hidden');
+        if (this.state === 'PAUSED') {
+        this.state = 'PLAYING';
+        }
+        },
+
+        loop(timestamp) {
+        const dt = (timestamp - this.lastTime) / 1000;
+        this.lastTime = timestamp;
+
+        if (this.state === 'PLAYING') {
+        this.update(dt);
+        }
+        this.draw();
+
+        requestAnimationFrame(t => this.loop(t));
+        },
+
+        update(dt) {
+        // Atualizar Timer
+        this.timer += dt;
+
+        // Atualizar Player
+        this.player.update();
+        this.checkWallCollisions(this.player);
+
+        // Atualizar Gado
+        let cowsInStun = 0;
+
+        // Resetar contagem das zonas
+        this.zones.forEach(z => {
+        z.count = 0;
+        z.isOvercrowded = false;
+        });
+
+        this.cows.forEach(cow => {
+        cow.behaviors(this.cows, this.player, this.walls);
+        cow.update();
+
+        // Colisão com Paredes (Física + Regra de Bem-Estar)
+        this.checkWallCollisions(cow, true);
+
+        // Contar zonas
+        this.zones.forEach(z => {
+        if (z.contains(cow)) {
+        z.count++;
+        // Checar se chegou no final
+        if (z.name === "Atordoamento") {
+        cowsInStun++;
+        }
+        }
+        });
+
+        // Regra: Pressão Excessiva (Player correndo perto)
+        if (this.player.isRunning) {
+        if (this.player.pos.dist(cow.pos) < CONFIG.stressDistance) { this.addFault("Pressão Excessiva"); } } }); //
+            Regra: Superlotação // Debounce para não contar 60 faltas por segundo if (Math.floor(this.timer) % 2===0) {
+            // Checa a cada 2s aprox ou usa timer específico // Simplificação: Checagem contínua mas addFault tem
+            debounce interno ou lógica específica // Vamos checar superlotação a cada frame mas só punir a cada X tempo
+            se persistir? // Para simplificar: Se detectar superlotação, marca a zona. // A punição será aplicada se a
+            condição persistir por um tempo, mas aqui faremos instantâneo com cooldown. } this.zones.forEach(z=> {
+            if (z.count > z.capacity) {
+            z.isOvercrowded = true;
+            this.addFault(`Superlotação em ${z.name}`);
+            }
+            });
+
+            this.updateHUD();
+
+            // Checar Vitória
+            if (cowsInStun === CONFIG.totalAnimais) {
+            this.finishGame();
+            }
+            },
+
+            checkWallCollisions(entity, isCow = false) {
+            let collided = false;
+            let speedBefore = entity.vel.mag();
+
+            for (let wall of this.walls) {
+            // AABB Simples
+            if (entity.pos.x + entity.radius > wall.x &&
+            entity.pos.x - entity.radius < wall.x + wall.w && entity.pos.y + entity.radius> wall.y &&
+                entity.pos.y - entity.radius < wall.y + wall.h) { // Resolução de colisão muito simples (empurrar para
+                    fora) // Determinar lado da colisão let overlapX=(entity.radius + wall.w / 2) -
+                    Math.abs(entity.pos.x - (wall.x + wall.w / 2)); let overlapY=(entity.radius + wall.h / 2) -
+                    Math.abs(entity.pos.y - (wall.y + wall.h / 2)); if (overlapX < overlapY) { // Colisão horizontal if
+                    (entity.pos.x < wall.x + wall.w / 2) entity.pos.x -=overlapX; else entity.pos.x +=overlapX;
+                    entity.vel.x *=-0.5; // Bounce } else { // Colisão vertical if (entity.pos.y < wall.y + wall.h / 2)
+                    entity.pos.y -=overlapY; else entity.pos.y +=overlapY; entity.vel.y *=-0.5; // Bounce }
+                    collided=true; } } // Regra: Colisão Brusca if (isCow && collided && speedBefore>
+                    CONFIG.wallCollisionThreshold) {
+                    this.addFault("Colisão Brusca");
+                    }
+                    },
+
+                    addFault(reason) {
+                    // Cooldown de 1.5s para não spammar faltas do mesmo evento
+                    let now = Date.now();
+                    if (now - this.lastFaultTime > 1500) {
+                    this.faults++;
+                    this.lastFaultTime = now;
+                    console.log(`Falta: ${reason}`);
+
+                    // Feedback visual rápido (piscar tela ou algo assim - opcional)
+                    const hud = document.getElementById('hud');
+                    hud.style.backgroundColor = 'rgba(244, 67, 54, 0.5)';
+                    setTimeout(() => hud.style.backgroundColor = 'rgba(0, 0, 0, 0.6)', 200);
+                    }
+                    },
+
+                    updateHUD() {
+                    document.getElementById('timer-display').innerText = this.timer.toFixed(1);
+                    document.getElementById('faults-display').innerText = this.faults;
+
+                    // Tempo final projetado
+                    let projected = this.timer + (this.faults * CONFIG.penalidadePorFalta);
+                    document.getElementById('final-score-display').innerText = projected.toFixed(1);
+                    },
+
+                    finishGame() {
+                    this.state = 'FINISHED';
+
+                    const finalTime = this.timer + (this.faults * CONFIG.penalidadePorFalta);
+
+                    document.getElementById('end-time').innerText = this.timer.toFixed(1);
+                    document.getElementById('end-faults').innerText = this.faults;
+                    document.getElementById('end-penalty').innerText = (this.faults * CONFIG.penalidadePorFalta);
+                    document.getElementById('end-final-score').innerText = finalTime.toFixed(1);
+
+                    let msg = "";
+                    if (this.faults === 0) msg = "Excelente! Bem-estar animal impecável.";
+                    else if (this.faults <= 2) msg="Bom trabalho, mas atenção aos detalhes." ; else
+                        msg="Muitas faltas! Reveja a pressão aplicada e a lotação." ;
+                        document.getElementById('feedback-msg').innerText=msg;
+                        document.getElementById('game-over-screen').classList.remove('hidden'); }, draw() { // Limpar
+                        this.ctx.fillStyle=CONFIG.colors.grass; this.ctx.fillRect(0, 0, this.canvas.width,
+                        this.canvas.height); // Desenhar Zonas this.zones.forEach(z=> z.draw(this.ctx));
+
+                        // Desenhar Paredes
+                        this.ctx.fillStyle = CONFIG.colors.wall;
+                        this.walls.forEach(w => {
+                        this.ctx.fillRect(w.x, w.y, w.w, w.h);
+                        });
+
+                        // Desenhar Gado
+                        this.cows.forEach(c => c.draw(this.ctx));
+
+                        // Desenhar Player
+                        if (this.player) this.player.draw(this.ctx);
+                        }
+                        };
+
+                        // Iniciar
+                        window.onload = () => Game.init();
+
+                        </script>
+</body>
+
+</html>

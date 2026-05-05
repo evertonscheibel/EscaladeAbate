@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Brand Scale */
+    --brand-950: #0B1437;
+    --brand-900: #101B33;
+    --brand-700: #14264F;
+    --brand-600: #2F5F9A;
+    --brand-500: #3B67A1;
+    /* Primary */
+    --brand-300: #6DA0BA;
+    --brand-glow: #4DD1FF;
+
+    /* Semantic Base */
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --info: #3B82F6;
+}
+
+/* Light Theme (Default) */
+:root {
+    color-scheme: light;
+    --bg: #F6F8FC;
+    --surface: #FFFFFF;
+    --surface-2: #F1F5FB;
+    --border: #E5EAF2;
+
+    --text: #0F172A;
+    --text-muted: #667085;
+    --text-inverse: #FFFFFF;
+
+    --primary: var(--brand-500);
+    --primary-hover: var(--brand-600);
+    --primary-contrast: #061126;
+    --focus-ring: rgba(77, 209, 255, 0.25);
+
+    --shadow-1: 0 8px 20px rgba(16, 27, 51, 0.08);
+    --shadow-2: 0 16px 40px rgba(16, 27, 51, 0.12);
+
+    --sidebar-bg: var(--brand-950);
+    --sidebar-text: rgba(255, 255, 255, 0.88);
+    --sidebar-text-muted: rgba(255, 255, 255, 0.55);
+    --sidebar-hover: rgba(77, 209, 255, 0.08);
+    --sidebar-active: rgba(77, 209, 255, 0.14);
+    --sidebar-active-border: var(--brand-glow);
+
+    --chip-bg: rgba(59, 103, 161, 0.10);
+    --chip-border: rgba(59, 103, 161, 0.22);
+    --chip-text: var(--brand-600);
+
+    --table-header-bg: #F8FAFF;
+    --table-row-hover: #F3F7FF;
+
+    /* Status Colors Mapped to Tokens */
+    --status-open: var(--info);
+    --status-progress: var(--brand-500);
+    --status-resolved: var(--success);
+    --status-closed: var(--text-muted);
+    --status-critical: var(--danger);
+
+    /* Legacy/Compatibilidade temporária para não quebrar layout antigo imediatamente */
+    --primary-navy: var(--brand-950);
+    --cool-gray: var(--bg);
+    --cloud-white: var(--surface);
+    --text-primary: var(--text);
+    --support-gray: var(--text-muted);
+    --card-shadow: var(--shadow-1);
+}
+
+/* Dark Theme */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #0A1020;
+    --surface: #111C44;
+    /* Azul marinho escuro ao invés de preto ou roxo */
+    --surface-2: #1B254B;
+    --border: rgba(255, 255, 255, 0.08);
+
+    --text: #FFFFFF;
+    --text-muted: #A3AED0;
+    --text-inverse: #0B1437;
+
+    --primary: var(--brand-glow);
+    --primary-hover: var(--brand-300);
+    --primary-contrast: #061126;
+    --focus-ring: rgba(77, 209, 255, 0.30);
+
+    --shadow-1: 0 10px 26px rgba(0, 0, 0, 0.35);
+    --shadow-2: 0 18px 50px rgba(0, 0, 0, 0.45);
+
+    --sidebar-bg: var(--brand-950);
+    --sidebar-text: rgba(255, 255, 255, 0.90);
+    --sidebar-text-muted: rgba(255, 255, 255, 0.60);
+    --sidebar-hover: rgba(77, 209, 255, 0.10);
+    --sidebar-active: rgba(77, 209, 255, 0.16);
+    --sidebar-active-border: var(--brand-glow);
+
+    --chip-bg: rgba(77, 209, 255, 0.10);
+    --chip-border: rgba(77, 209, 255, 0.20);
+    --chip-text: #EAF0FF;
+
+    --table-header-bg: rgba(255, 255, 255, 0.04);
+    --table-row-hover: rgba(255, 255, 255, 0.03);
+
+    /* Compatibilidade */
+    --primary-navy: var(--brand-950);
+    --cool-gray: var(--bg);
+    --cloud-white: var(--surface);
+    --text-primary: var(--text);
+    --support-gray: var(--text-muted);
+    --card-shadow: var(--shadow-1);
+}
+
+/* Global Reset for Dark Mode Inputs & Tables */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background-color: var(--bg);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] table {
+    background-color: transparent;
+    color: var(--text);
+}
+
+html[data-theme="dark"] tr:nth-child(even),
+html[data-theme="dark"] tr:nth-child(odd) {
+    background-color: transparent;
+    /* Remove zebra striping branco se existir */
+}
+
+html[data-theme="dark"] th {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Leve destaque header */
+    color: var(--text-muted);
+}
+
+html[data-theme="dark"] td {
+    background-color: transparent !important;
+    /* Força transparência para nao sobrepor */
+    color: var(--text);
+}
+
+html[data-theme="dark"] .metric-card,
+html[data-theme="dark"] .card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+html[data-theme="dark"] option {
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.8);
+}

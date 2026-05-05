@@ -1,0 +1,251 @@
+/* Gatehouse Dashboard Premium Styles */
+.gatehouse-dashboard {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Page Header Overrides if needed */
+.header-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* KPI Grid is handled by .reports-kpi-grid in App.css */
+/* Individual KPI colors */
+.kpi-icon.blue {
+    background: #e0e7ff;
+    color: #4318FF;
+}
+
+.kpi-icon.green {
+    background: #dcfce7;
+    color: #059669;
+}
+
+.kpi-icon.purple {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.kpi-icon.orange {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+/* Filter Bar Overrides */
+.gatehouse-dashboard .filter-bar {
+    padding: 0 0 24px 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 450px;
+}
+
+.search-input-wrapper svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-input-wrapper input {
+    padding-left: 44px;
+    width: 100%;
+}
+
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tabs-container {
+    display: flex;
+    background: var(--bg-soft);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.tab-item {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.tab-item.active {
+    background: var(--surface);
+    color: var(--primary);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Plate Badges Premium */
+.plate-badge-premium {
+    display: inline-flex;
+    flex-direction: column;
+    background: #f8fafc;
+    border: 2px solid #1e293b;
+    border-radius: 6px;
+    padding: 4px 10px;
+    min-width: 110px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.plate-text {
+    font-family: 'Inter', monospace;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #1e293b;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.plate-type {
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+/* User Cells */
+.user-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar-mini {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-soft);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-name {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.user-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Destination Cell */
+.destination-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.dest-main {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.dest-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Time Badge */
+.time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: var(--bg-soft);
+}
+
+.time-badge.danger {
+    background: var(--error-soft);
+    color: var(--error);
+}
+
+/* Pagination Info */
+.table-pagination-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.sync-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sync-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--success);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--success-soft);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gatehouse-dashboard .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input-wrapper {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .plate-badge-premium {
+        min-width: 90px;
+        padding: 3px 6px;
+    }
+
+    .plate-text {
+        font-size: 0.95rem;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

@@ -1,0 +1,400 @@
+/* Slaughter Closure Premium Styles */
+.closure-container {
+    max-width: 100%;
+    margin: 0 40px;
+}
+
+.closure-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    background: var(--surface);
+    padding: 8px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-title h1 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Specific Status Badge for SIF */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.status-badge.draft {
+    background: var(--warning-soft);
+    color: var(--warning);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.status-badge.closed {
+    background: var(--success-soft);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Info Cards Layout */
+.closure-main-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 250px;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.info-card {
+    background: var(--surface);
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-card label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Totals Card - High Performance Look */
+.info-card.totals {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.info-card.totals::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+.total-item {
+    padding: 12px 20px;
+    z-index: 1;
+}
+
+.total-item .label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.total-item .value {
+    font-size: 1.25rem;
+    font-weight: 900;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.total-item .value small {
+    font-size: 0.85rem;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+/* Closure Table Customizations */
+.closure-table-container {
+    background: var(--surface);
+    border-radius: 20px;
+    box-shadow: var(--shadow-1);
+    border: 1px solid var(--border);
+    overflow-x: auto; /* Permite scroll horizontal */
+    margin-bottom: 24px;
+}
+
+.closure-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 1100px; /* Garante que o scroll apareça em telas pequenas */
+}
+
+
+.closure-table th {
+    background: var(--bg-soft);
+    padding: 8px 10px;
+    font-size: 0.55rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border);
+}
+
+.closure-table td {
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.closure-table tbody tr:hover {
+    background: var(--bg-soft);
+}
+
+.producer-name {
+    display: block;
+    font-weight: 800;
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.broker-name {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.cattle-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.total-main {
+    font-weight: 900;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.cattle-summary small {
+    font-size: 0.6rem;
+    font-weight: 800;
+    background: var(--primary-soft);
+    color: var(--primary);
+    padding: 1px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+/* Inputs in Table */
+.closure-table input,
+.closure-table textarea {
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 4px 8px;
+    background: var(--surface);
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.closure-table input:focus,
+.closure-table textarea:focus {
+    border-color: var(--primary);
+    background: var(--surface);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+    outline: none;
+}
+
+.input-uf {
+    width: 50px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.stack-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Empty State */
+.empty-closure-state {
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--surface);
+    border-radius: 20px;
+    border: 2px dashed var(--border);
+    max-width: 600px;
+    margin: 80px auto;
+}
+
+.empty-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    opacity: 0.5;
+}
+
+.empty-closure-state h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+/* Modals */
+.modal-overlay {
+    background: rgba(10, 16, 32, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.modal-content textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 2px solid #94a3b8; /* Improved visibility */
+    margin-bottom: 24px;
+    font-weight: 600;
+    background: white;
+}
+
+.modal-content textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+    outline: none;
+}
+
+/* Column Widths */
+.col-seq {
+    width: 40px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.col-rancher {
+    min-width: 200px;
+}
+
+.col-obs {
+    min-width: 200px;
+}
+
+.col-actions {
+    width: 80px;
+    text-align: center;
+}
+
+.btn-save-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #10b981;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-save-row:hover {
+    background: #10b981;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-save-row span {
+    letter-spacing: 1px;
+}
+
+.col-local {
+    width: 140px;
+}
+
+.col-cattle {
+    width: 100px;
+    text-align: center;
+}
+
+.col-curral {
+    width: 100px;
+}
+
+.col-nf {
+    width: 160px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .closure-main-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .closure-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+    }
+
+    .header-actions button {
+        flex: 1;
+        min-width: 140px;
+    }
+}

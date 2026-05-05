@@ -1,0 +1,214 @@
+.gatehouse-entry {
+    background: #f9fafb;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.entry-header {
+    background: white;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.entry-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.btn-back {
+    color: #6b7280;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.btn-back:hover {
+    background: #f3f4f6;
+}
+
+/* Steps */
+.steps-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding: 0 24px;
+}
+
+.step-item {
+    flex: 1;
+    max-width: 140px;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 8px;
+    color: #9ca3af;
+    text-align: center;
+}
+
+.step-item.active {
+    background: #2563eb;
+    color: #2563eb;
+}
+
+/* Form Styles */
+.entry-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.step-pane {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-section {
+    margin-bottom: 24px;
+}
+
+.form-section label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.plate-input {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px !important;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 0.1em;
+    background: #f8fafc;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.entity-found {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #059669;
+    font-weight: 600;
+}
+
+/* Type Buttons */
+.type-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.type-btn {
+    padding: 14px;
+    border-radius: 12px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4b5563;
+    transition: all 0.2s;
+}
+
+.type-btn.active {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Action Buttons */
+.btn-next,
+.btn-save {
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.btn-next {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-save {
+    background: #10b981;
+    color: white;
+}
+
+.actions-footer {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.btn-secondary-outline {
+    flex: 1;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    background: white;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .type-selector {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "frizelo-whatsapp-server",
+  "version": "1.0.0",
+  "description": "Backend para integração WhatsApp do Frizelo IT Manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@wppconnect-team/wppconnect": "^1.28.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}

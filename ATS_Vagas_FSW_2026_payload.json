@@ -1,0 +1,624 @@
+[
+  {
+    "id_externo": "FSW-ATS-2026-001",
+    "titulo_vaga": "ALMOXARIFE",
+    "setor": "ALMOXARIFADO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 1839.33,
+      "faixa_min": 1839.33,
+      "faixa_max": 3927.12,
+      "niveis": {
+        "SALÁRIO FSW": 1839.33,
+        "NÍVEL I": 3328.06,
+        "NÍVEL II": 3615.2,
+        "NÍVEL III": 3927.12
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Almoxarife",
+      "referencia_setor": "Almoxarifado"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-002",
+    "titulo_vaga": "ANALISTA DE PCP",
+    "setor": "PCP",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-003",
+    "titulo_vaga": "ANALISTA DE RH",
+    "setor": "RH",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-004",
+    "titulo_vaga": "AUX. DE CÂMARA",
+    "setor": "EXPEDIÇÃO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 5,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-005",
+    "titulo_vaga": "AUX. DE CÂMARA",
+    "setor": "HAMBURGUER",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-006",
+    "titulo_vaga": "AUX. DE CÂMARA",
+    "setor": "PORCIONADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-007",
+    "titulo_vaga": "AUX. DE LIMPEZA",
+    "setor": "LIMPEZA",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 4,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 1897.43,
+      "faixa_min": 1777.63,
+      "faixa_max": 2202.66,
+      "niveis": {
+        "SALÁRIO FSW": 1897.43,
+        "NÍVEL I": 1777.63,
+        "NÍVEL II": 2011.47,
+        "NÍVEL III": 2202.66
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Aux. de Limpeza",
+      "referencia_setor": "Limpeza e Conservação"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-008",
+    "titulo_vaga": "AUX. DE PRODUÇÃO",
+    "setor": "HAMBURGUER",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 10,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 1725.0,
+      "faixa_min": 1539.37,
+      "faixa_max": 2011.47,
+      "niveis": {
+        "SALÁRIO FSW": 1725.0,
+        "NÍVEL I": 1539.37,
+        "NÍVEL II": 1777.63,
+        "NÍVEL III": 2011.47
+      },
+      "moeda": "BRL",
+      "confianca": "medium",
+      "referencia_cargo": "Aux. de Desossa",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-009",
+    "titulo_vaga": "AUX. DE PRODUÇÃO",
+    "setor": "PORCIONADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 9,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 1725.0,
+      "faixa_min": 1539.37,
+      "faixa_max": 2011.47,
+      "niveis": {
+        "SALÁRIO FSW": 1725.0,
+        "NÍVEL I": 1539.37,
+        "NÍVEL II": 1777.63,
+        "NÍVEL III": 2011.47
+      },
+      "moeda": "BRL",
+      "confianca": "medium",
+      "referencia_cargo": "Aux. de Desossa",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-010",
+    "titulo_vaga": "AUX. DE PRODUÇÃO",
+    "setor": "SERRADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 3,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 1725.0,
+      "faixa_min": 1539.37,
+      "faixa_max": 2011.47,
+      "niveis": {
+        "SALÁRIO FSW": 1725.0,
+        "NÍVEL I": 1539.37,
+        "NÍVEL II": 1777.63,
+        "NÍVEL III": 2011.47
+      },
+      "moeda": "BRL",
+      "confianca": "medium",
+      "referencia_cargo": "Aux. de Desossa",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-011",
+    "titulo_vaga": "AUX. DE SERVIÇOS GERAIS",
+    "setor": "ETE",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-012",
+    "titulo_vaga": "AUX. DE SERVIÇOS GERAIS",
+    "setor": "HAMBURGUER",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-013",
+    "titulo_vaga": "BALANCEIRO",
+    "setor": "HAMBURGUER",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2365.0,
+      "faixa_min": 2356.03,
+      "faixa_max": 3008.61,
+      "niveis": {
+        "SALÁRIO FSW": 2365.0,
+        "NÍVEL I": 2356.03,
+        "NÍVEL II": 2549.68,
+        "NÍVEL III": 2769.65,
+        "NÍVEL IV": 3008.61
+      },
+      "moeda": "BRL",
+      "confianca": "medium",
+      "referencia_cargo": "Balanceiro Desossa",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-014",
+    "titulo_vaga": "BALANCEIRO",
+    "setor": "PORCIONADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2365.0,
+      "faixa_min": 2356.03,
+      "faixa_max": 3008.61,
+      "niveis": {
+        "SALÁRIO FSW": 2365.0,
+        "NÍVEL I": 2356.03,
+        "NÍVEL II": 2549.68,
+        "NÍVEL III": 2769.65,
+        "NÍVEL IV": 3008.61
+      },
+      "moeda": "BRL",
+      "confianca": "medium",
+      "referencia_cargo": "Balanceiro Desossa",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-015",
+    "titulo_vaga": "CONFERENTE",
+    "setor": "EXPEDIÇÃO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-016",
+    "titulo_vaga": "COORDENADOR DE PRODUÇÃO",
+    "setor": "GESTÃO DE PRODUÇÃO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-017",
+    "titulo_vaga": "ELETRICISTA",
+    "setor": "MANUTENÇÃO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-018",
+    "titulo_vaga": "ESTOQUISTA",
+    "setor": "ESTOQUE",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2012.37,
+      "faixa_min": 2012.37,
+      "faixa_max": 2769.65,
+      "niveis": {
+        "SALÁRIO FSW": 2012.37,
+        "NÍVEL I": 2356.03,
+        "NÍVEL II": 2549.68,
+        "NÍVEL III": 2769.65
+      },
+      "moeda": "BRL",
+      "confianca": "medium",
+      "referencia_cargo": "Estoquista de Congelamento",
+      "referencia_setor": "Armazenagem e Exp."
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-019",
+    "titulo_vaga": "FATURAMENTO",
+    "setor": "FATURAMENTO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-020",
+    "titulo_vaga": "GESTOR /LIDERANÇA",
+    "setor": "EXPEDIÇÃO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-021",
+    "titulo_vaga": "GESTOR /LIDERANÇA",
+    "setor": "HAMBURGUER",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-022",
+    "titulo_vaga": "GESTOR /LIDERANÇA",
+    "setor": "LIMPEZA",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-023",
+    "titulo_vaga": "GESTOR /LIDERANÇA",
+    "setor": "PORCIONADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-024",
+    "titulo_vaga": "GESTOR /LIDERANÇA",
+    "setor": "QUALIDADE",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-025",
+    "titulo_vaga": "MECANICO DE MANUTENÇÃO",
+    "setor": "MANUTENÇÃO",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 4599.71,
+      "faixa_min": 3335.19,
+      "faixa_max": 4599.71,
+      "niveis": {
+        "SALÁRIO FSW": 4599.71,
+        "NÍVEL I": 3335.19,
+        "NÍVEL II": 3622.94,
+        "NÍVEL III": 3935.52,
+        "NÍVEL IV": 4275.07
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Mecânico Manutenção",
+      "referencia_setor": "Manutenção Industrial"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-026",
+    "titulo_vaga": "MONITOR DE QUALIDADE",
+    "setor": "QUALIDADE",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 3104.8,
+      "faixa_min": 2826.66,
+      "faixa_max": 3335.46,
+      "niveis": {
+        "SALÁRIO FSW": 3104.8,
+        "NÍVEL I": 2826.66,
+        "NÍVEL II": 3070.54,
+        "NÍVEL III": 3335.46
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Monitor(a) Controle Qualidade",
+      "referencia_setor": "Controle Qualidade"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-027",
+    "titulo_vaga": "OPERADOR DE MÁQUINAS",
+    "setor": "ESTOQUE",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2012.37,
+      "faixa_min": 2011.47,
+      "faixa_max": 2504.31,
+      "niveis": {
+        "SALÁRIO FSW": 2012.37,
+        "NÍVEL I": 2011.47,
+        "NÍVEL II": 2202.66,
+        "NÍVEL III": 2504.31
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Operador de Máquinas",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-028",
+    "titulo_vaga": "OPERADOR DE MÁQUINAS",
+    "setor": "HAMBURGUER",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 5,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2012.37,
+      "faixa_min": 2011.47,
+      "faixa_max": 2504.31,
+      "niveis": {
+        "SALÁRIO FSW": 2012.37,
+        "NÍVEL I": 2011.47,
+        "NÍVEL II": 2202.66,
+        "NÍVEL III": 2504.31
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Operador de Máquinas",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-029",
+    "titulo_vaga": "OPERADOR SALA DE MÁQUINAS",
+    "setor": "SALA DE MÁQUINAS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 4,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2644.83,
+      "faixa_min": 2644.83,
+      "faixa_max": 4424.39,
+      "niveis": {
+        "SALÁRIO FSW": 2644.83,
+        "NÍVEL I": 3749.48,
+        "NÍVEL II": 4072.98,
+        "NÍVEL III": 4424.39
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Operador Sala de Máquinas",
+      "referencia_setor": "Sala de Máquinas"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-030",
+    "titulo_vaga": "PORTEIRO",
+    "setor": "PORTARIA",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 4,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2127.36,
+      "faixa_min": 2127.36,
+      "faixa_max": 2736.66,
+      "niveis": {
+        "SALÁRIO FSW": 2127.36,
+        "NÍVEL I": 2356.03,
+        "NÍVEL II": 2549.68,
+        "NÍVEL III": 2736.66
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Porteiro",
+      "referencia_setor": "Portaria"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-031",
+    "titulo_vaga": "REFILADOR",
+    "setor": "PORCIONADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 8,
+    "observacao": "VAGA NOVA",
+    "salario": {
+      "salario_base": 2242.35,
+      "faixa_min": 2011.47,
+      "faixa_max": 2788.0,
+      "niveis": {
+        "SALÁRIO FSW": 2242.35,
+        "NÍVEL I": 2011.47,
+        "NÍVEL II": 2349.68,
+        "NÍVEL III": 2566.56,
+        "NÍVEL IV": 2788.0
+      },
+      "moeda": "BRL",
+      "confianca": "high",
+      "referencia_cargo": "Refilador",
+      "referencia_setor": "Desossa"
+    }
+  },
+  {
+    "id_externo": "FSW-ATS-2026-032",
+    "titulo_vaga": "SERRADOR",
+    "setor": "SERRADOS",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-033",
+    "titulo_vaga": "SIF",
+    "setor": "QUALIDADE",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  },
+  {
+    "id_externo": "FSW-ATS-2026-034",
+    "titulo_vaga": "TECNICO DE INFORMÁTICA",
+    "setor": "TI",
+    "gestor": "FSW",
+    "empresa": "Frizelo",
+    "regiao": "Campo Grande",
+    "status": "EM_ABERTO",
+    "qtd_vagas": 1,
+    "observacao": "VAGA NOVA",
+    "salario": null
+  }
+]

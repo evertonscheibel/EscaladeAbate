@@ -1,0 +1,327 @@
+.tickets-page {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Toolbar Refinement */
+.tickets-toolbar {
+    background: var(--surface);
+    padding: 24px 32px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border);
+    animation: slideInDown 0.4s ease-out;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    background: var(--surface-2);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    transition: var(--transition-base);
+    flex: 1;
+    max-width: 450px;
+}
+
+.search-box:focus-within {
+    background: var(--surface);
+    border-color: var(--primary-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.search-box svg {
+    color: var(--text-muted);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 6px;
+    background: var(--surface-2);
+    padding: 6px;
+    border-radius: 14px;
+}
+
+.filter-tabs button {
+    padding: 8px 18px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-tabs button:hover {
+    color: var(--primary);
+}
+
+.filter-tabs button.active {
+    background: var(--surface);
+    color: var(--primary);
+    box-shadow: var(--shadow-soft);
+}
+
+.filter-select {
+    padding: 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-select:hover {
+    border-color: var(--primary-soft);
+}
+
+.view-toggle {
+    display: flex;
+    background: var(--surface-2);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.view-toggle button {
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.view-toggle button.active {
+    background: var(--surface);
+    color: var(--primary);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Tickets Table Integration with global styles */
+.tickets-table-container {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border);
+}
+
+.tickets-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Highlights */
+.ticket-unassigned-highlight {
+    background: rgba(245, 158, 11, 0.05) !important;
+}
+
+.ticket-unassigned-highlight td:first-child {
+    border-left: 4px solid var(--warning);
+}
+
+.ticket-title-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-badge,
+.attachment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--surface-2);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+/* Kanban Board Refinement */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.kanban-column {
+    background: var(--surface-2);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kanban-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+}
+
+.kanban-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.kanban-count {
+    background: var(--surface);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary);
+    box-shadow: var(--shadow-soft);
+}
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.kanban-card {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    transition: var(--transition-base);
+    border: 1px solid var(--border);
+}
+
+.kanban-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-1);
+    border-color: var(--primary-soft);
+}
+
+.kanban-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ticket-id {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+}
+
+.priority-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.kanban-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.kanban-card p {
+    margin: 0 0 16px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.kanban-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.assigned-to {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+    .tickets-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: none;
+    }
+
+    .filters {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+}

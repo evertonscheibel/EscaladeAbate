@@ -1,0 +1,86 @@
+.user-detail-container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.profile-selection-banner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 32px;
+}
+
+.detail-tabs .tab-btn {
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.detail-tabs .tab-btn:hover {
+    color: var(--primary);
+}
+
+.detail-tabs .tab-btn.active {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.audit-timeline p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Os estilos globais de .page-header, .content-card e .form-control agora dominam o layout */
+
+.access-summary-card {
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.access-summary-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.temp-password-box {
+    font-family: 'JetBrains Mono', monospace;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px dashed var(--warning);
+    color: var(--warning-dark);
+    background: white;
+}
+
+.perm-module-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.perm-indicator {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+/* Timeline e Auditoria */
+.timeline-item {
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(4px);
+}

@@ -1,0 +1,138 @@
+.area-scanner-page {
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.scanner-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.scanner-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.scanner-header p {
+    color: var(--text-secondary);
+}
+
+.scanner-action {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px dashed var(--border-color);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.qr-simulated-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-secondary);
+}
+
+.btn-scan {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+}
+
+.hint {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.manual-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.search-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 6px -1px var(--box-shadow);
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.area-item-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s;
+}
+
+.area-item-card:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px var(--box-shadow);
+}
+
+.area-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-code {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.area-name {
+    margin: 2px 0;
+    font-size: 1.1rem;
+}
+
+.area-sector {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.error-alert {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

@@ -1,0 +1,167 @@
+.purchase-modal {
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.purchase-modal .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.purchase-modal .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-modal .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.purchase-modal .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #334155;
+    font-size: 0.875rem;
+}
+
+.purchase-modal .form-group input,
+.purchase-modal .form-group select,
+.purchase-modal .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    background-color: #fff;
+}
+
+.purchase-modal .form-group input:focus,
+.purchase-modal .form-group select:focus,
+.purchase-modal .form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.purchase-modal .form-group input:disabled,
+.purchase-modal .form-group select:disabled,
+.purchase-modal .form-group textarea:disabled {
+    background-color: #f1f5f9;
+    cursor: not-allowed;
+    color: #64748b;
+}
+
+.purchase-modal .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.purchase-modal .total-value {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+.purchase-modal .request-info {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.purchase-modal .info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.purchase-modal .info-item:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.purchase-modal .info-item strong {
+    color: #475569;
+    font-size: 0.875rem;
+}
+
+.purchase-modal .info-item span {
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.purchase-modal .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.purchase-modal .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.purchase-modal .btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+.purchase-modal .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+.purchase-modal .btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(59, 130, 246, 0.4);
+}
+
+.purchase-modal .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .purchase-modal {
+        max-width: 95vw;
+        margin: 1rem;
+    }
+
+    .purchase-modal .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .purchase-modal .modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .purchase-modal .btn-secondary,
+    .purchase-modal .btn-primary {
+        width: 100%;
+    }
+}
